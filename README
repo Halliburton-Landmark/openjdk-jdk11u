@@ -1,4 +1,27 @@
 
+Welcome to Landmark's JDK fork
+==============================
+The branch *hg* is copied from the official openjdk mercurial repo [jdk-updates/jdk11u](https://hg.openjdk.java.net/jdk-updates/jdk11u).
+The branch *dsg* is a forked version with Landmark fixes.
+
+If you want to update jdk to a newer version:
+
+* checkout branch *hg* of this repo
+* in a separated folder clone the openjdk hg repo and checkout a required tag.
+* copy all files from the hg repo (except .hg and .hgignore) and paste to the git repo folder, choose yes to overwrite files.
+* commit changes to git (branch *hg*)
+* add a version tag
+* push commit to origin/hg
+* merge changed from *hg* to *dsg*, resolve conflicts, test and push to *dsg* branch
+
+If you want to make further changes in the fork:
+
+* checkout branch *dsg* of this repo
+* create a fix branch from *dsg* branch
+* make changes, test, commit and push
+* create a pull request to merge your fix branch to *dsg*
+
+
 Welcome to the JDK!
 ===================
 
