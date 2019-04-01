@@ -146,18 +146,15 @@ public class XEmbeddedFramePeer extends XFramePeer {
         // fix for 5063031
         // if we use super.handleConfigureNotifyEvent() we would get wrong
         // size and position because embedded frame really is NOT a decorated one
-        checkIfOnNewScreen(toGlobal(new Rectangle(scaleDown(xe.get_x()),
-                                                  scaleDown(xe.get_y()),
-                                                  scaleDown(xe.get_width()),
-                                                  scaleDown(xe.get_height()))));
+        checkIfOnNewScreen(toGlobal(new Rectangle(xe.get_x(), xe.get_y(), xe.get_width(), xe.get_height())));
 
         Rectangle oldBounds = getBounds();
 
         synchronized (getStateLock()) {
-            x = scaleDown(xe.get_x());
-            y = scaleDown(xe.get_y());
-            width = scaleDown(xe.get_width());
-            height = scaleDown(xe.get_height());
+            x = xe.get_x();
+            y = xe.get_y();
+            width = xe.get_width();
+            height = xe.get_height();
 
             dimensions.setClientSize(width, height);
             dimensions.setLocation(x, y);
