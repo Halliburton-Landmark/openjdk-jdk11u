@@ -427,8 +427,9 @@ class XDnDDropTargetProtocol extends XDropTargetProtocol {
         boolean track = true;
         long[] formats = null;
 
+		// jdk bug - https://bugs.java.com/bugdatabase/view_bug.do?bug_id=JDK-8199937
         if (getSourceWindow() != 0) {
-            return false;
+            cleanup();
         }
 
         if (!(XToolkit.windowToXWindow(xclient.get_window()) instanceof XWindow)
